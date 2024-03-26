@@ -11,6 +11,10 @@ echo **********************************************************[0m
 
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 
+IF EXIST autorun.bat (
+	call autorun.bat
+)
+
 :input
 echo.
 
