@@ -1,13 +1,16 @@
 @echo off
 
+set "silent=False" rem True/False
+
 title Terminal
 
 chcp 65001 >nul
-
-echo [36m**********************************************************
-echo ** Zawadzki's Terminal v1                               **
-echo ** For private use only. Redistribution is prohibited.  **
-echo **********************************************************[0m
+if not "%silent%"=="True" (
+	echo [36m**********************************************************
+	echo ** Zawadzki's Terminal v1                               **
+	echo ** For private use only. Redistribution is prohibited.  **
+	echo **********************************************************[0m
+)
 
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 
