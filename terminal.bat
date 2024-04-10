@@ -26,7 +26,7 @@ set /p cmd=".%BS%[95m╚══>[0m "
 
 echo.
 
-%cmd%
+cmd /c %cmd%
 echo Finished with code %errorlevel%
 
 goto input
