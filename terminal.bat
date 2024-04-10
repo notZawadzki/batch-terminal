@@ -14,8 +14,8 @@ if not "%silent%"=="True" (
 
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 
-IF EXIST autorun.bat (
-	call autorun.bat
+IF EXIST "%~dp0/autorun.bat" (
+	call "%~dp0/autorun.bat"
 )
 
 :input
