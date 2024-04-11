@@ -20,6 +20,15 @@ IF EXIST "%~dp0/autorun.bat" (
 )
 
 :input
+
+IF "noRepeat"=="True" (
+	set "cmd="
+)
+
+IF NOT "%cmd%"=="" (
+    echo Finished with code %errorlevel%
+)
+
 echo.
 
 echo [95m╔══[0m([33m%username%[0m@[92m%computername%[0m)-[[94m%cd%[0m]
@@ -28,12 +37,5 @@ set /p cmd=".%BS%[95m╚══>[0m "
 echo.
 
 %cmd%
-IF "noRepeat"=="True" (
-	set "cmd="
-)
-
-IF NOT "%cmd%"=="" (
-    echo Finished with code %errorlevel%
-)
 
 goto input
