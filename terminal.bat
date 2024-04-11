@@ -1,6 +1,7 @@
 @echo off
 
 set "silent=False" rem True/False
+set "noRepeat=False" rem True/False
 
 title Terminal
 
@@ -26,7 +27,13 @@ set /p cmd=".%BS%[95m╚══>[0m "
 
 echo.
 
-cmd /c %cmd%
-echo Finished with code %errorlevel%
+%cmd%
+IF "noRepeat"=="True" (
+	set "cmd="
+)
+
+IF NOT "%cmd%"=="" (
+    echo Finished with code %errorlevel%
+)
 
 goto input
